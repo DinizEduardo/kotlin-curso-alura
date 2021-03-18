@@ -1,14 +1,10 @@
 fun main() {
     println("Bem vindo ao banco")
-    val contaEduardo = Conta()
-    contaEduardo.titular = "Eduardo"
-    contaEduardo.numero = 7777
+    val contaEduardo = Conta("Eduardo", 7777)
     contaEduardo.deposita(100.0)
 
 
-    val contaFran = Conta()
-    contaFran.titular = "Fran"
-    contaFran.numero = 1151
+    val contaFran = Conta("Fran", 1111)
     contaFran.deposita(200.0)
 
     println(contaEduardo.titular)
@@ -21,10 +17,7 @@ fun main() {
 
 }
 
-
-class Conta {
-    var titular = ""
-    var numero = 0
+class Conta(var titular: String, var numero: Int) {
     var saldo = 0.0
         private set
 
