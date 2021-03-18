@@ -3,21 +3,21 @@ fun main() {
     val contaEduardo = Conta()
     contaEduardo.titular = "Eduardo"
     contaEduardo.numero = 7777
-    contaEduardo.setSaldo(100.0)
+    contaEduardo.deposita(100.0)
 
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
     contaFran.numero = 1151
-    contaFran.setSaldo(200.0)
+    contaFran.deposita(200.0)
 
     println(contaEduardo.titular)
     println(contaEduardo.numero)
-    println(contaEduardo.getSaldo())
+    println(contaEduardo.saldo)
     println()
     println(contaFran.titular)
     println(contaFran.numero)
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
 
 }
 
@@ -25,10 +25,12 @@ fun main() {
 class Conta {
     var titular = ""
     var numero = 0
-    private var saldo = 0.0
+    var saldo = 0.0
+        private set
 
     fun deposita(valor: Double) {
-        this.saldo += valor
+        if(valor > 0)
+            this.saldo += valor
     }
 
     fun saca(valor: Double) {
@@ -47,12 +49,4 @@ class Conta {
         return false
     }
 
-    fun getSaldo(): Double {
-        return saldo;
-    }
-
-    fun setSaldo(valor: Double) {
-        if(valor > 0)
-            this.saldo = valor;
-    }
 }
