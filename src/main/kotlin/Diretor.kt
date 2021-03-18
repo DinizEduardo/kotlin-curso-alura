@@ -14,4 +14,9 @@ class Diretor(
         return this.senha == senha
     }
 
+    override val bonifcacao: Double
+        get() {
+            return salario * 0.3
+        }
+
 }

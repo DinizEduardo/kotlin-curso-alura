@@ -10,19 +10,19 @@ fun main() {
     println("Nome: ${eduardo.nome}")
     println("CPF: ${eduardo.cpf}")
     println("Salario: ${eduardo.salario}")
-    println("Bonificacao: ${eduardo.bonifcacao()}")
+    println("Bonificacao: ${eduardo.bonifcacao}")
 
     val fran = Gerente(
-        nome = "Eduardo",
+        nome = "fran",
         cpf = "111.111.111-11",
         salario = 5000.0,
         senha = 123456
     )
 
-    println("Nome: ${eduardo.nome}")
-    println("CPF: ${eduardo.cpf}")
-    println("Salario: ${eduardo.salario}")
-    println("Bonificacao: ${eduardo.bonifcacao()}")
+    println("Nome: ${fran.nome}")
+    println("CPF: ${fran.cpf}")
+    println("Salario: ${fran.salario}")
+    println("Bonificacao: ${fran.bonifcacao}")
 
     if(fran.autentica(123456)) {
         println("Certo")
@@ -42,7 +42,7 @@ fun main() {
     println("Nome: ${gui.nome}")
     println("CPF: ${gui.cpf}")
     println("Salario: ${gui.salario}")
-    println("Bonificacao: ${gui.bonifcacao()}")
+    println("Bonificacao: ${gui.bonifcacao}")
     println("PLR: ${gui.plr}")
 
 
