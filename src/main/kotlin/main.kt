@@ -14,40 +14,41 @@ fun main() {
     println(contaEduardo.titular)
     println(contaEduardo.numero)
     println(contaEduardo.saldo)
-
+    println()
     println(contaFran.titular)
     println(contaFran.numero)
     println(contaFran.saldo)
+
+    println("Depositando na conta do Eduardo")
+    contaEduardo.deposita(50.0)
+    println(contaEduardo.saldo)
+
+    println("Depositando na conta do Fran")
+    contaFran.deposita(77.0)
+    println(contaFran.saldo)
+
+    println("Sacando de eduardo")
+    contaEduardo.saca(90.0)
+    println("Slado -> ${contaEduardo.saldo}")
+
+    contaFran.saca(377.0)
+    println("Slado -> ${contaFran.saldo}")
+
 }
+
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
-}
 
-fun testaLacos() {
-    for (i in 5 downTo 1 step 1) {
-//        if(i == 3) break;
-        // var -> pode mudar | val -> não pode mudar
-        val titular: String = "Eduardo $i" // OBRIGA INICIALIZAR O VALOR
-        val numeroConta: Int = 1000 + i
-        var saldo: Double = i + 10.0
-
-        println("Titular: $titular")
-        println("Numero da conta: $numeroConta")
-        println("Saldo da conta: $saldo")
-        println("------------------")
-        testaConcidoces(saldo)
+    fun deposita(valor: Double) {
+        this.saldo += valor
     }
-}
 
-fun testaConcidoces(saldo: Double) {
-    when {
-        saldo > 0.0 -> println("Conta positiva")
-
-        saldo == 0.0 -> println("Conta neutra")
-
-        else -> println("Conta negativa")
+    fun saca(valor: Double) {
+        if(this.saldo >= valor) {
+            saldo -= valor
+        }
     }
 }
