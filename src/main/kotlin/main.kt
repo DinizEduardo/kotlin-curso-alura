@@ -1,10 +1,10 @@
 fun main() {
     println("Bem vindo ao banco")
-    val contaEduardo = Conta("Eduardo", 7777)
+    val contaEduardo = Conta(titular = "Eduardo", numero =  7777)
     contaEduardo.deposita(100.0)
 
 
-    val contaFran = Conta("Fran", 1111)
+    val contaFran = Conta(numero = 1111, titular = "Fran")
     contaFran.deposita(200.0)
 
     println(contaEduardo.titular)
@@ -15,9 +15,15 @@ fun main() {
     println(contaFran.numero)
     println(contaFran.saldo)
 
+    if(contaFran.transfere(destino =  contaEduardo, valor = 10.0)){
+        println("Transferiu")
+    }else {
+        println("Não transferiu")
+    }
+
 }
 
-class Conta(var titular: String, var numero: Int) {
+class Conta(val titular: String, val numero: Int) {
     var saldo = 0.0
         private set
 
