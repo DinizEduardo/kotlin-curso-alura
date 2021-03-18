@@ -19,20 +19,14 @@ fun main() {
     println(contaFran.numero)
     println(contaFran.saldo)
 
-    println("Depositando na conta do Eduardo")
-    contaEduardo.deposita(50.0)
-    println(contaEduardo.saldo)
-
-    println("Depositando na conta do Fran")
-    contaFran.deposita(77.0)
-    println(contaFran.saldo)
-
-    println("Sacando de eduardo")
-    contaEduardo.saca(90.0)
-    println("Slado -> ${contaEduardo.saldo}")
-
-    contaFran.saca(377.0)
-    println("Slado -> ${contaFran.saldo}")
+    println("transferencia da conta da fran para Eduardo")
+    if(contaFran.transfere(301.0, contaEduardo)) {
+        println("Transferiu!")
+        println("Saldo eduardo ${contaEduardo.saldo}")
+        println("Saldo fran ${contaFran.saldo}")
+    }else {
+        println("Falhou")
+    }
 
 }
 
@@ -47,8 +41,18 @@ class Conta {
     }
 
     fun saca(valor: Double) {
-        if(this.saldo >= valor) {
+        if (this.saldo >= valor) {
             saldo -= valor
         }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (this.saldo >= valor) {
+            this.saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+
+        return false
     }
 }
