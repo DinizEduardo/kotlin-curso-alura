@@ -46,4 +46,13 @@ fun main() {
     println("PLR: ${gui.plr}")
 
 
+    val calculadora = CalculadoraBonificacao();
+    calculadora.registra(eduardo)
+    calculadora.registra(fran)
+    calculadora.registra(gui)
+
+    println("Total bonificacao: ${calculadora.total}")
+
+
+
 }
