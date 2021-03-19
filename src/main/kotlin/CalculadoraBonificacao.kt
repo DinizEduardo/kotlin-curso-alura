@@ -7,13 +7,4 @@ class CalculadoraBonificacao {
         this.total += funcionario.bonifcacao
     }
 
-    fun registra(gerente: Gerente) {
-        this.total += gerente.bonifcacao
-    }
-
-    fun registra(diretor: Diretor) {
-        this.total += diretor.bonifcacao
-    }
-
-
 }
