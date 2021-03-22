@@ -1,16 +1,16 @@
-import br.com.alura.bytebank.modelo.Cliente
-import br.com.alura.bytebank.modelo.Conta
-import br.com.alura.bytebank.modelo.ContaPoupanca
-import br.com.alura.bytebank.modelo.total
+import br.com.alura.bytebank.modelo.Endereco
 
 fun main() {
 
-    val alex = Cliente(nome = "Alex", cpf = "", senha = 1)
-    val contaPoupanca = ContaPoupanca(titular = alex, numero = 1111)
+    val endereco = Endereco()
+    val endereco2 = Endereco()
+    println(endereco.equals(endereco))
 
-    testaContasDiferentes()
+    println(endereco.hashCode())
+    println(endereco2.hashCode())
 
-    println("Total de contas: ${Conta.total}")
+    println(endereco.toString())
+    println(endereco2.toString())
 }
 
 
