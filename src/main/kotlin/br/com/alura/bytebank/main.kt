@@ -1,4 +1,5 @@
 import br.com.alura.bytebank.modelo.Cliente
+import br.com.alura.bytebank.modelo.Conta
 import br.com.alura.bytebank.modelo.ContaPoupanca
 import br.com.alura.bytebank.modelo.total
 
@@ -9,7 +10,7 @@ fun main() {
 
     testaContasDiferentes()
 
-    println("Total de contas: ${total}")
+    println("Total de contas: ${Conta.total}")
 }
 
 
