@@ -1,70 +1,68 @@
-import br.com.alura.bytebank.modelo.Analista
-import br.com.alura.bytebank.modelo.CalculadoraBonificacao
-import br.com.alura.bytebank.modelo.Diretor
-import br.com.alura.bytebank.modelo.Gerente
+package br.com.alura.bytebank.teste
+
+import br.com.alura.bytebank.modelo.*
 
 fun testaFuncionarios() {
-    val eduardo = Analista(
-        nome = "Eduardo",
+    val alex = Analista(
+        nome = "Alex",
         cpf = "111.111.111-11",
         salario = 1000.0
     )
 
-    println("Nome: ${eduardo.nome}")
-    println("CPF: ${eduardo.cpf}")
-    println("Salario: ${eduardo.salario}")
-    println("Bonificacao: ${eduardo.bonifcacao}")
+    println("nome ${alex.nome}")
+    println("cpf ${alex.cpf}")
+    println("salario ${alex.salario}")
+    println("bonificação ${alex.bonificacao}")
 
     val fran = Gerente(
-        nome = "fran",
-        cpf = "111.111.111-11",
-        salario = 5000.0,
-        senha = 123456
+        nome = "Fran",
+        cpf = "222.222.222-22",
+        salario = 2000.0,
+        senha = 1234
     )
 
-    println("Nome: ${fran.nome}")
-    println("CPF: ${fran.cpf}")
-    println("Salario: ${fran.salario}")
-    println("Bonificacao: ${fran.bonifcacao}")
+    println("nome ${fran.nome}")
+    println("cpf ${fran.cpf}")
+    println("salario ${fran.salario}")
+    println("bonificação ${fran.bonificacao}")
 
-    if (fran.autentica(123456)) {
-        println("Certo")
+    if (fran.autentica(1234)) {
+        println("autenticou com sucesso")
     } else {
-        println("Falha")
+        println("falha na autenticação")
     }
 
-
     val gui = Diretor(
-        nome = "Guilherme",
-        cpf = "111.111.111-11",
-        salario = 50000.0,
-        senha = 123456,
-        plr = 500.0
+        nome = "Gui",
+        cpf = "333.333.333-33",
+        salario = 4000.0,
+        senha = 4000,
+        plr = 200.0
     )
 
-    println("Nome: ${gui.nome}")
-    println("CPF: ${gui.cpf}")
-    println("Salario: ${gui.salario}")
-    println("Bonificacao: ${gui.bonifcacao}")
-    println("PLR: ${gui.plr}")
+    println("nome ${gui.nome}")
+    println("cpf ${gui.cpf}")
+    println("salario ${gui.salario}")
+    println("bonificação ${gui.bonificacao}")
+    println("plr ${gui.plr}")
+
+    if (gui.autentica(4000)) {
+        println("autenticou com sucesso")
+    } else {
+        println("falha na autenticação")
+    }
 
     val maria = Analista(
-        nome = "maria",
-        cpf = "111.111.111-11",
-        salario = 1000.0
+        nome = "Maria",
+        cpf = "444.444.444-44",
+        salario = 3000.0
     )
 
-    println("Nome: ${maria.nome}")
-    println("CPF: ${maria.cpf}")
-    println("Salario: ${maria.salario}")
-    println("Bonificacao: ${maria.bonifcacao}")
-
-
-    val calculadora = CalculadoraBonificacao();
-    calculadora.registra(eduardo)
+    val calculadora = CalculadoraBonificacao()
+    calculadora.registra(alex)
     calculadora.registra(fran)
     calculadora.registra(gui)
     calculadora.registra(maria)
 
-    println("Total bonificacao: ${calculadora.total}")
+    println("total de bonificação: ${calculadora.total}")
 }

@@ -6,7 +6,7 @@ class CalculadoraBonificacao {
         private set
 
     fun registra(funcionario: Funcionario) {
-        this.total += funcionario.bonifcacao
+        this.total += funcionario.bonificacao
     }
 
 }

@@ -8,24 +8,24 @@ class Endereco(
     var estado: String = "",
     var cep: String = "",
     var complemento: String = ""
-) {
-
+){
     override fun toString(): String {
-        return """
-            Endereco(
-                logradouro='$logradouro',
-                numero=$numero,
-                bairro='$bairro',
-                cidade='$cidade',
-                estado='$estado',
-                cep='$cep',
-                complemento='$complemento'
-            )""".trimIndent()
-    }
+        return """Endereco(
+            logradouro='$logradouro', 
+            numero=$numero, 
+            bairro='$bairro', 
+            cidade='$cidade', 
+            estado='$estado', 
+            cep='$cep', 
+            complemento='$complemento')
+            """.trimIndent()
+                }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (other !is Endereco) return false
+        if (javaClass != other?.javaClass) return false
+
+        other as Endereco
 
         if (logradouro != other.logradouro) return false
         if (numero != other.numero) return false
