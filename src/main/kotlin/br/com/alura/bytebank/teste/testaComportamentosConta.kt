@@ -15,13 +15,11 @@ fun testaComportamentosConta() {
 
     println(contaEduardo.titular.nome)
     println(contaEduardo.titular.cpf)
-    println(contaEduardo.titular.senha)
     println(contaEduardo.numero)
     println(contaEduardo.saldo)
     println()
     println(contaFran.titular.nome)
     println(contaFran.titular.cpf)
-    println(contaFran.titular.senha)
     println(contaFran.numero)
     println(contaFran.saldo)
 
